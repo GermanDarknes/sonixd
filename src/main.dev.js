@@ -413,12 +413,9 @@ if (isWindows && isWindows10) {
         : 'Unknown Artist';
     Controls.displayUpdater.musicProperties.albumTitle = arg.album || 'Unknown Album';
 
-    Controls.displayUpdater.thumbnail =
-      arg.image.includes('placeholder')
+    Controls.displayUpdater.thumbnail = arg.image.includes('placeholder')
       ? null
-      : RandomAccessStreamReference.createFromUri(
-          new Uri(arg.image)
-        );
+      : RandomAccessStreamReference.createFromUri(new Uri(arg.image));
 
     Controls.displayUpdater.update();
   });
